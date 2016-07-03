@@ -21,6 +21,8 @@ library
                      , LN.Sanitize.Organization
   build-depends:       base >= 4.7 && < 5
                      , text
+                     , text-icu
+                     , text-regex-replace
                      , ln-types
   ghc-options:         -Wall -Werror
   default-language:    Haskell2010
@@ -29,6 +31,8 @@ test-suite ln-sanitize-test
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
   main-is:             Spec.hs
+  other-modules:       LN.Sanitize.InternalSpec
+                     , LN.Sanitize.UserSpec
   build-depends:       base
                      , hspec
                      , ln-sanitize

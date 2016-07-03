@@ -8,6 +8,7 @@ module LN.Sanitize.UserSpec (
 
 
 import           LN.Sanitize.User
+import           LN.T.Internal.JSON ()
 import           LN.T.User.Request
 import           Test.Hspec
 
@@ -32,7 +33,7 @@ test_user_request =
   UserRequest
     " display  nick   "
     "Some  Name "
-    "hello world@email.com "
+    "helloworld@email.com "
     "  plugin "
     "ident   "
     Nothing
