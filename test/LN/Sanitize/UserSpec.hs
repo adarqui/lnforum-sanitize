@@ -31,7 +31,7 @@ spec = do
 test_user_request :: UserRequest
 test_user_request =
   UserRequest
-    " display  nick   "
+    " display  name   "
     "Some  Name "
     "helloworld@email.com "
     "  plugin "
@@ -43,7 +43,7 @@ test_user_request =
 test_user_request' :: UserRequest
 test_user_request' =
   UserRequest
-    "display nick"
+    "display name"
     "Some Name"
     "helloworld@email.com"
     "plugin"

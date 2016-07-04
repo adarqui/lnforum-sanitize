@@ -13,10 +13,10 @@ import           LN.T.User.Request    (UserRequest (..))
 
 
 sanitizeUserRequest :: UserRequest -> UserRequest
-sanitizeUserRequest (UserRequest display_nick name email plugin ident tos) =
+sanitizeUserRequest (UserRequest display_name full_name email plugin ident tos) =
   UserRequest
-    (sanitizeLine display_nick)
-    (sanitizeLine name)
+    (sanitizeLine display_name)
+    (sanitizeLine full_name)
     (sanitizeLine email)
     (sanitizeLine plugin)
     (sanitizeLine ident)
