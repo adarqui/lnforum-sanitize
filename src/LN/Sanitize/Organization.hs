@@ -12,15 +12,15 @@ import           LN.T.Organization.Request (OrganizationRequest (..))
 
 
 sanitizeOrganizationRequest :: OrganizationRequest -> OrganizationRequest
-sanitizeOrganizationRequest (OrganizationRequest display_name desc comp loc email memb tags icon viz guard) =
+sanitizeOrganizationRequest (OrganizationRequest display_name m_desc comp loc email membership tags icon visibility guard) =
   OrganizationRequest
     (sanitizeLine display_name)
-    (sanitizeLine <$> desc)
+    (sanitizeLine <$> m_desc)
     (sanitizeLine comp)
     (sanitizeLine loc)
     (sanitizeLine email)
-    memb
+    membership
     (map sanitizeLine tags)
     icon
-    viz
+    visibility
     guard

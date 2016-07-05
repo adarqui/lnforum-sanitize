@@ -19,6 +19,10 @@ library
                      , LN.Sanitize.Internal
                      , LN.Sanitize.User
                      , LN.Sanitize.Organization
+                     , LN.Sanitize.Forum
+                     , LN.Sanitize.Board
+                     , LN.Sanitize.Thread
+                     , LN.Sanitize.ThreadPost
   build-depends:       base >= 4.7 && < 5
                      , text
                      , text-icu
