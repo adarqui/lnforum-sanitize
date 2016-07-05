@@ -7,7 +7,7 @@ module LN.Sanitize.Thread (
 
 
 import           LN.Sanitize.Internal (sanitizeLine)
-import           LN.T.Thread.Request   (ThreadRequest (..))
+import           LN.T.Thread.Request  (ThreadRequest (..))
 
 
 
