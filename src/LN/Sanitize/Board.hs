@@ -22,6 +22,4 @@ sanitizeBoardRequest (BoardRequest display_name m_desc is_anonymous can_create_s
     (map sanitizeLine suggested_tags)
     icon
     (map sanitizeLine tags)
-    icon
-    visibility
     guard
