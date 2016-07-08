@@ -6,8 +6,8 @@ module LN.Sanitize.Organization (
 
 
 
-import           LN.Sanitize.Internal      (sanitizeLine)
-import           LN.T.Organization.Request (OrganizationRequest (..))
+import           LN.Sanitize.Internal (sanitizeLine)
+import           LN.T.Organization    (OrganizationRequest (..))
 
 
 

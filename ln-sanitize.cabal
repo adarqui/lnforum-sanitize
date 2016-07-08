@@ -27,7 +27,7 @@ library
                      , text
                      , text-icu
                      , text-regex-replace
-                     , ln-types
+                     , haskell-ln-types
   ghc-options:         -Wall -Werror
   default-language:    Haskell2010
 
@@ -40,7 +40,7 @@ test-suite ln-sanitize-test
   build-depends:       base
                      , hspec
                      , ln-sanitize
-                     , ln-types
+                     , haskell-ln-types
   ghc-options:         -Wall -Werror -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
 

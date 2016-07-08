@@ -6,8 +6,8 @@ module LN.Sanitize.ThreadPost (
 
 
 
-import           LN.Sanitize.Internal    (sanitizeLine)
-import           LN.T.ThreadPost.Request (ThreadPostRequest (..))
+import           LN.Sanitize.Internal (sanitizeLine)
+import           LN.T.ThreadPost      (ThreadPostRequest (..))
 
 
 

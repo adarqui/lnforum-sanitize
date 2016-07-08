@@ -8,7 +8,7 @@ module LN.Sanitize.User (
 
 
 import           LN.Sanitize.Internal (sanitizeLine)
-import           LN.T.User.Request    (UserRequest (..))
+import           LN.T.User            (UserRequest (..))
 
 
 

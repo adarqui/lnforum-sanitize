@@ -7,7 +7,7 @@ module LN.Sanitize.Board (
 
 
 import           LN.Sanitize.Internal (sanitizeLine)
-import           LN.T.Board.Request   (BoardRequest (..))
+import           LN.T.Board           (BoardRequest (..))
 
 
 

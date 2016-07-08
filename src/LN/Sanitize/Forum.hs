@@ -7,7 +7,7 @@ module LN.Sanitize.Forum (
 
 
 import           LN.Sanitize.Internal (sanitizeLine)
-import           LN.T.Forum.Request   (ForumRequest (..))
+import           LN.T.Forum           (ForumRequest (..))
 
 
 
