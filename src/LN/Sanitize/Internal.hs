@@ -12,7 +12,6 @@ module LN.Sanitize.Internal (
 import           Data.Char             (isAlphaNum)
 import           Data.Text             (Text)
 import qualified Data.Text             as T
-import           Data.Text.ICU.Replace (replaceAll)
 
 
 
@@ -38,8 +37,21 @@ toSafeUrl =
   T.intercalate "-" .                                   -- replace spaces with dashes
   T.words .
   T.map (\c -> if not $ isAlphaNum c then ' ' else c) . -- anything other than alpha numeric becomes a space
-  replaceAll "'s" "s " .                                -- cleans up Ownership's in names
+  T.replace "'s" "s " .                                 -- cleans up Ownership's in names
   T.toLower
+
+
+
+-- Original toSafeUrl
+-- However, I want to get rid of the replaceAll function which forces us to have a dependency on text-icu, text-regex-replace
+--
+-- toSafeUrl :: Text -> Text
+-- toSafeUrl =
+--   T.intercalate "-" .                                   -- replace spaces with dashes
+--   T.words .
+--   T.map (\c -> if not $ isAlphaNum c then ' ' else c) . -- anything other than alpha numeric becomes a space
+--   replaceAll "'s" "s " .                                -- cleans up Ownership's in names
+--   T.toLower
 
 
 

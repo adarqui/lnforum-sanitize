@@ -8,8 +8,7 @@ module LN.Sanitize.UserSpec (
 
 
 import           LN.Sanitize.User
-import           LN.T.Internal.JSON ()
-import           LN.T.User.Request
+import           LN.T.User
 import           Test.Hspec
 
 
