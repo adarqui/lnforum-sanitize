@@ -12,7 +12,7 @@ import           LN.T.Organization    (OrganizationRequest (..))
 
 
 sanitizeOrganizationRequest :: OrganizationRequest -> OrganizationRequest
-sanitizeOrganizationRequest (OrganizationRequest display_name m_desc comp loc email membership tags icon visibility guard) =
+sanitizeOrganizationRequest (OrganizationRequest display_name m_desc comp loc email membership tags icon visibility guard _) =
   OrganizationRequest
     (sanitizeLine display_name)
     (sanitizeLine <$> m_desc)
@@ -24,3 +24,5 @@ sanitizeOrganizationRequest (OrganizationRequest display_name m_desc comp loc em
     icon
     visibility
     guard
+    -- state
+    Nothing
