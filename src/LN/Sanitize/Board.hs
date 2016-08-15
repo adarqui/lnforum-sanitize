@@ -6,6 +6,8 @@ module LN.Sanitize.Board (
 
 
 
+import           Prelude
+
 import           LN.Sanitize.Internal (sanitizeLine)
 import           LN.T.Board           (BoardRequest (..))
 

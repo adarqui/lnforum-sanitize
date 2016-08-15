@@ -6,6 +6,8 @@ module LN.Sanitize.ThreadPost (
 
 
 
+import           Prelude
+
 import           LN.Sanitize.Internal (sanitizeLine)
 import           LN.T.ThreadPost      (ThreadPostRequest (..))
 

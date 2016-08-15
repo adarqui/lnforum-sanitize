@@ -6,6 +6,8 @@ module LN.Sanitize.Forum (
 
 
 
+import           Prelude
+
 import           LN.Sanitize.Internal (sanitizeLine)
 import           LN.T.Forum           (ForumRequest (..))
 

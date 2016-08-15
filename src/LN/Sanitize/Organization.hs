@@ -6,6 +6,8 @@ module LN.Sanitize.Organization (
 
 
 
+import           Prelude
+
 import           LN.Sanitize.Internal (sanitizeLine)
 import           LN.T.Organization    (OrganizationRequest (..))
 

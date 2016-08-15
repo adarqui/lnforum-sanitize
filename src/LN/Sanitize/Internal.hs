@@ -9,9 +9,11 @@ module LN.Sanitize.Internal (
 
 
 
-import           Data.Char             (isAlphaNum)
-import           Data.Text             (Text)
-import qualified Data.Text             as T
+import           Prelude
+
+import           Data.Char (isAlphaNum)
+import           Data.Text (Text)
+import qualified Data.Text as T
 
 
 

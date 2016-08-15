@@ -6,6 +6,8 @@ module LN.Sanitize.Thread (
 
 
 
+import           Prelude
+
 import           LN.Sanitize.Internal (sanitizeLine)
 import           LN.T.Thread          (ThreadRequest (..))
 
