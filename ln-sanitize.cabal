@@ -17,6 +17,7 @@ library
   hs-source-dirs:      src
   exposed-modules:     LN.Sanitize
                      , LN.Sanitize.Internal
+                     , LN.Sanitize.HTML
                      , LN.Sanitize.User
                      , LN.Sanitize.Organization
                      , LN.Sanitize.Forum
@@ -24,6 +25,7 @@ library
                      , LN.Sanitize.Thread
                      , LN.Sanitize.ThreadPost
   build-depends:       base >= 4.7 && < 5
+                     , html-entities
                      , text
                      , haskell-ln-types
   ghc-options:         -Wall -Werror
@@ -34,6 +36,7 @@ test-suite ln-sanitize-test
   hs-source-dirs:      test
   main-is:             Spec.hs
   other-modules:       LN.Sanitize.InternalSpec
+                     , LN.Sanitize.HTMLSpec
                      , LN.Sanitize.UserSpec
   build-depends:       base
                      , hspec

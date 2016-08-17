@@ -13,14 +13,14 @@ import           Prelude
 
 import           Data.Char (isAlphaNum)
 import           Data.Text (Text)
-import qualified Data.Text as T
+import qualified Data.Text as Text
 
 
 
 -- | A simple sanitized line, in which whitespace is trimmed from both ends, and consecutive spaces are squashed
 --
 sanitizeLine :: Text -> Text
-sanitizeLine = T.strip . squashSpaces
+sanitizeLine = Text.strip . squashSpaces
 
 
 
@@ -36,11 +36,11 @@ sanitizeLine = T.strip . squashSpaces
 -- "adarqs-journals"
 toSafeUrl :: Text -> Text
 toSafeUrl =
-  T.intercalate "-" .                                   -- replace spaces with dashes
-  T.words .
-  T.map (\c -> if not $ isAlphaNum c then ' ' else c) . -- anything other than alpha numeric becomes a space
-  T.replace "'s" "s " .                                 -- cleans up Ownership's in names
-  T.toLower
+  Text.intercalate "-" .                                   -- replace spaces with dashes
+  Text.words .
+  Text.map (\c -> if not $ isAlphaNum c then ' ' else c) . -- anything other than alpha numeric becomes a space
+  Text.replace "'s" "s " .                                 -- cleans up Ownership's in names
+  Text.toLower
 
 
 
@@ -49,11 +49,11 @@ toSafeUrl =
 --
 -- toSafeUrl :: Text -> Text
 -- toSafeUrl =
---   T.intercalate "-" .                                   -- replace spaces with dashes
---   T.words .
---   T.map (\c -> if not $ isAlphaNum c then ' ' else c) . -- anything other than alpha numeric becomes a space
+--   Text.intercalate "-" .                                   -- replace spaces with dashes
+--   Text.words .
+--   Text.map (\c -> if not $ isAlphaNum c then ' ' else c) . -- anything other than alpha numeric becomes a space
 --   replaceAll "'s" "s " .                                -- cleans up Ownership's in names
---   T.toLower
+--   Text.toLower
 
 
 
@@ -64,11 +64,11 @@ toSafeUrl =
 --
 
 toSafeName :: Text -> Text
-toSafeName = T.concat . T.words . T.map (\c -> if not $ isAlphaNum c then ' ' else c) . T.toLower
+toSafeName = Text.concat . Text.words . Text.map (\c -> if not $ isAlphaNum c then ' ' else c) . Text.toLower
 
 
 
 -- | Squash consecutive spaces
 --
 squashSpaces :: Text -> Text
-squashSpaces = T.unwords . T.words
+squashSpaces = Text.unwords . Text.words
