@@ -24,7 +24,6 @@ spec = do
     it "removes leading & trailing whitespace, also consecutive whitespace" $ do
       sanitizeLine "  hello  world  " `shouldBe` "hello world"
 
-
   describe "toSafeUrl" $ do
     it "makes urls pretty" $ do
       toSafeUrl "1 2 3 -- hello world?!bingo-BOOM" `shouldBe` "1-2-3-hello-world-bingo-boom"

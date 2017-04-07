@@ -34,7 +34,6 @@ test_user_request =
     "Some  Name "
     "helloworld@email.com "
     "  plugin "
-    "ident   "
     Nothing
 
 
@@ -46,5 +45,4 @@ test_user_request' =
     "Some Name"
     "helloworld@email.com"
     "plugin"
-    "ident"
     Nothing
