@@ -10,7 +10,7 @@ import           Data.Text              (Text)
 import qualified Data.Text              as Text
 import qualified Data.Text.Lazy         as Lazy
 import qualified Data.Text.Lazy.Builder as Lazy
-import           HTMLEntities.Decoder
+import           HTMLEntities.Decoder   (htmlEncodedText)
 
 
 
