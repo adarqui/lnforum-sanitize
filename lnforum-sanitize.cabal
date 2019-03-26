@@ -16,6 +16,7 @@ cabal-version:       >=1.10
 library
   hs-source-dirs:      src
   exposed-modules:     LN.Sanitize
+                     , LN.Sanitize.Forum
                      , LN.Sanitize.Board
                      , LN.Sanitize.Internal
                      , LN.Sanitize.HTML
