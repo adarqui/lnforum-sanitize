@@ -4,16 +4,20 @@ module LN.Sanitize.Internal (
   sanitizeLine,
   toSafeUrl,
   toSafeName,
-  squashSpaces
+  squashSpaces,
+  decodeEntities
 ) where
 
 
 
 import           Prelude
 
-import           Data.Char (isAlphaNum)
-import           Data.Text (Text)
-import qualified Data.Text as Text
+import           Data.Char              (isAlphaNum)
+import           Data.Text              (Text)
+import qualified Data.Text              as Text
+import           Data.Text.Lazy         (toStrict)
+import           Data.Text.Lazy.Builder
+import           HTMLEntities.Decoder
 
 
 
@@ -34,13 +38,22 @@ sanitizeLine = Text.strip . squashSpaces
 --
 -- >> toSafeUrl "ADARQ's Journal's"
 -- "adarqs-journals"
+--
+-- >> toSafeUrl "MOVIES &amp; ENTERTAINMENT &amp; SHeeT!"
+-- "movies-entertainment-sheet"
+--
 toSafeUrl :: Text -> Text
 toSafeUrl =
   Text.intercalate "-" .                                   -- replace spaces with dashes
   Text.words .
   Text.map (\c -> if not $ isAlphaNum c then ' ' else c) . -- anything other than alpha numeric becomes a space
   Text.replace "'s" "s " .                                 -- cleans up Ownership's in names
-  Text.toLower
+  Text.toLower .
+  decodeEntities
+  where
+
+decodeEntities :: Text -> Text
+decodeEntities = toStrict . Data.Text.Lazy.Builder.toLazyText . htmlEncodedText
 
 
 

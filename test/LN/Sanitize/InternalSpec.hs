@@ -29,6 +29,7 @@ spec = do
       toSafeUrl "1 2 3 -- hello world?!bingo-BOOM" `shouldBe` "1-2-3-hello-world-bingo-boom"
       toSafeUrl "ADARQ's Journal"                  `shouldBe` "adarqs-journal"
       toSafeUrl "ADARQ's Journal's"                `shouldBe` "adarqs-journals"
+      toSafeUrl "MOVIES &amp; ENTERTAINMENT &amp; SHeeT!" `shouldBe` "movies-entertainment-sheet"
 
   describe "toSafeName" $ do
     it "makes display names safe, by removing various characters etc" $ do
